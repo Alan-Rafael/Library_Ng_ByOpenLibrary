@@ -72,7 +72,9 @@
               "buildTarget": "bibliotecaAngular:build:production"
             },
             "development": {
-              "buildTarget": "bibliotecaAngular:build:development"
+              "buildTarget": "bibliotecaAngular:build:development",
+              "proxyConfig": "src/proxy.conf.json"
+
             }
           },
           "defaultConfiguration": "development"

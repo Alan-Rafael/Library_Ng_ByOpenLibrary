@@ -1,0 +1,19 @@
+{
+    "/api/books/search/**": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+        "^/api/books": "/api/books"
+        }
+    },
+    "/api/books/getInitialBooks": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+        "^/api/books/getInitialBooks": "/api/books/getInitialBooks"
+        }
+    }
+
+}

@@ -1,0 +1,8 @@
+<!-- SEARCH HTML -->
+<mat-toolbar class="custom-toolbar">
+    <h1 (click)="navigateHome()" id="my-app">Library</h1>
+    <div class="pesquisar">
+        <input [(ngModel)]="searchQuery" placeholder="Digite o título do livro" />
+        <button (click)="search()" [routerLink]="['/search',searchQuery]">Buscar</button>
+    </div>
+</mat-toolbar>

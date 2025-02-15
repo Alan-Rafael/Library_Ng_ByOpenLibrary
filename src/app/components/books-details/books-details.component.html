@@ -1,0 +1,25 @@
+<div class="body" *ngIf="selectedBook">
+    <div class="info-book">
+        <h1>{{ selectedBook.title }}</h1>
+        <p><strong>Autores:</strong> {{ getAuthors() }}</p>
+        <p><strong>Ano de lançamento:</strong>  {{getPublishDate()}}</p>
+        <p><strong>Descrição:</strong> {{ getSinopse() }}</p>
+        <p class="generos"><strong>Gêneros:</strong> {{ getGeneres() }}</p>
+        
+    </div>
+    <div class="cover-image">
+        <img
+        *ngIf="coverId"
+        [src]="'https://covers.openlibrary.org/b/id/' + coverId + '-L.jpg'"
+        alt="Capa do Livro">
+        <button class="quero-ler">Quero ler</button>
+    </div>
+</div>
+
+
+
+<!-- <p>
+    <strong>Subtítulo:</strong>
+    {{ selectedBook.subtitle || "Subtítulo não disponível" }}
+    </p> -->
+

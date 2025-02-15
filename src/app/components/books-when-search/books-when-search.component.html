@@ -1,0 +1,14 @@
+<div class="body">
+    <div  class="book-container" *ngIf="searchQuery.length > 0">
+        <h2 class="row-title">Resultados da Pesquisa</h2>
+            <div class="book-card" *ngFor="let book of searchQuery">
+                <a class="links" [routerLink]="['/viewBook', book.key.replace('/works/', '')]">
+                    <img
+                    [src]="'https://covers.openlibrary.org/b/id/' + book.cover_i + '-L.jpg'"
+                    alt="Capa do Livro"
+                />
+                <h3 class="titles">{{ book.title }}</h3>
+            </a>
+        </div>
+    </div>
+</div>

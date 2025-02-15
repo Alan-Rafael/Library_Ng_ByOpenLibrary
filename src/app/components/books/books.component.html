@@ -1,0 +1,23 @@
+<div class="body">
+    
+        <div class="book-main">
+            <div class="book-container" *ngFor="let genre of ['romance', 'fiction', 'classic', 'comic', 'juvenile', 'suspense']">
+                <h2 class="row-title">{{ genre | titlecase }}</h2>
+                <div class="row-wrapper">
+                    <button class="scroll-btn-left" (click)="scrollBooks(bookRowRef, 'left')">←</button>
+                    <div class="book-row" #bookRowRef>
+                        <div class="book-card" *ngFor="let book of booksByGenre[genre].books">
+                            <a class="links" [routerLink]="['/viewBook', book.key.replace('/works/', '')]">
+                                <img
+                                    [src]="'https://covers.openlibrary.org/b/id/' + book.cover_i + '-L.jpg'"
+                                    alt="Capa do Livro"
+                                />
+                                <h3 class="titles">{{ book.title }}</h3>
+                            </a>
+                        </div>
+                    </div>
+                    <button class="scroll-btn-right" (click)="scrollBooks(bookRowRef, 'right'); loadBooksByGenre(genre)">→</button>
+                </div>
+            </div>
+        </div> 
+</div>
