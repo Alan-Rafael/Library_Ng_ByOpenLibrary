@@ -29,10 +29,8 @@ export class BooksComponent implements OnInit{
       private bookService: BooksService,){}
 
     ngOnInit(){  
-      
         if (this.searchQuery.length === 0) {
           this.loadInitialBooks();
-          console.log("ALOU CHAMA AQUI");
         }
     }
 
@@ -43,6 +41,7 @@ export class BooksComponent implements OnInit{
       this.loadBooksByGenre('comic');
       this.loadBooksByGenre('juvenile');
       this.loadBooksByGenre('suspense');
+      console.log("Pelo menos esta chamando ");
     }
 
     booksByGenre: { [key: string]: { books: Book[], page: number } } = {
@@ -92,12 +91,13 @@ export class BooksComponent implements OnInit{
     viewBookDetails(): void {
       this.route.navigate(['viewBookDetails'])
     }
+    
     scrollLeft(index: number) {
       const row = this.bookRows.toArray()[index]?.nativeElement;
       if (row) {
           row.scrollBy({ left: -300, behavior: 'smooth' });
       }
-  }
+    }
 
   scrollBooks(bookRow: HTMLElement, direction: 'left' | 'right') {
     const scrollAmount = 700; 

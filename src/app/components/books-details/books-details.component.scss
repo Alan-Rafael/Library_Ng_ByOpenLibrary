@@ -11,14 +11,13 @@
 
 }
 
+
 .info-book {
     max-width: 800px;
     margin-left: 1rem;
 }
 
-.generos{
-    background-color: rgb(31, 69, 69);
-}
+
 img {
     margin-top: 20px;
     width: 200px;
@@ -35,8 +34,12 @@ img {
     width: 300px;
     border: 1px solid #ddd;
 }
+.quero-ler a{
+    text-decoration: none;
+    color: white;}
 
 .quero-ler{
+    text-decoration: none;
     width: 80%;
     margin: 10px;
     padding: 15px;
@@ -46,13 +49,49 @@ img {
     border: none;
     border-radius: 2px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Adiciona transição suave */
+    transition: background-color 0.3s ease; 
 
 }
 
 .quero-ler:hover {
     background: #3d5269;
 }
+
+.generos {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte */
+    gap: 10px; /* Adiciona espaçamento entre os itens em ambas as direções (horizontal e vertical) */
+    align-items: flex-start; /* Para permitir que os gêneros ocupem várias linhas, se necessário */
+}
+
+.genre-item {
+    background-color: #f0f0f0; 
+    padding: 5px 10px;
+    margin-right: 8px; /* Espaçamento entre os gêneros */
+    border-radius: 4px; 
+    font-size: 14px;
+    color: #333;
+}
+
+.autores{
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte */
+    gap: 15px; /* Adiciona espaçamento entre os itens em ambas as direções (horizontal e vertical) */
+    align-items: flex-start; 
+}
+
+.autores a{
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: antiquewhite;
+}
+
+.genre-item:hover {
+    background-color: #e0e0e0; /* Efeito de hover, se desejado */
+}
+
 /* Responsividade */
 @media (max-width: 900px) {
     .body {
