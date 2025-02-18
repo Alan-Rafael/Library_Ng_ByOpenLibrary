@@ -11,4 +11,14 @@
             </a>
         </div>
     </div>
+
+    <ng-template #noResults>
+        <h2 class="row-title">Nenhum resultado encontrado</h2>
+    </ng-template>
+
+    <div class="pagination" *ngIf="searchQuery.length > 0">
+        <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+        <span>Página {{ currentPage }} de {{ totalPages }}</span>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages">Próxima</button>
+    </div>
 </div>

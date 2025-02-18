@@ -6,6 +6,6 @@ import { BooksWhenSearchComponent } from './components/books-when-search/books-w
 export const routes: Routes = [
     {path: '', component: BooksComponent},
     {path: 'viewBook/:id', component: BooksDetailsComponent},
-    {path: 'search/:search', component: BooksWhenSearchComponent},
+    {path: 'search/:query', component: BooksWhenSearchComponent},
 
 ];

@@ -1,18 +1,29 @@
 <div class="body" *ngIf="selectedBook">
     <div class="info-book">
         <h1>{{ selectedBook.title }}</h1>
-        <p><strong>Autores:</strong> {{ getAuthors() }}</p>
+        <p class="autores"><strong>Autores:</strong> 
+            <span *ngFor="let author of getAuthors()">
+              <a *ngIf="author.url" [href]="author.url" target="_blank">{{ author.name }}</a>
+              <span *ngIf="!author.url">{{ author.name }}</span>
+              <span *ngIf="author !== getAuthors()[getAuthors().length - 1]">, </span> <!-- Adiciona uma vírgula entre os autores -->
+            </span>
+        </p>
         <p><strong>Ano de lançamento:</strong>  {{getPublishDate()}}</p>
         <p><strong>Descrição:</strong> {{ getSinopse() }}</p>
-        <p class="generos"><strong>Gêneros:</strong> {{ getGeneres() }}</p>
-        
+        <p class="generos">
+            <strong>Gêneros:</strong>
+            <span *ngFor="let genre of getGeneres()">
+            <span class="genre-item">{{ genre }}</span>
+            </span>
+        </p>        
     </div>
     <div class="cover-image">
         <img
         *ngIf="coverId"
         [src]="'https://covers.openlibrary.org/b/id/' + coverId + '-L.jpg'"
         alt="Capa do Livro">
-        <button class="quero-ler">Quero ler</button>
+
+        <p class="quero-ler"><a [href]="getBookOpenLibraryUrl()" target="_blank" >Ver na Open Library</a></p>
     </div>
 </div>
 

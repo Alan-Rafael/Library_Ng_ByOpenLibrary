@@ -11,7 +11,13 @@ export class BooksService {
   constructor(private http: HttpClient,) {}
 
   searchBooks(query: string): Observable<any[]>{
-    return this.http.get<any[]>(`https://openlibrary.org/search.json?title=org${query}`)
+    return this.http.get<any[]>(`https://openlibrary.org/search.json?title=${query}`)
+  }
+
+  searchBooks2(query: string, page: number): Observable<any> {
+    return this.http.get<any>(`https://openlibrary.org/search.json`, {
+      params: { title: query, page: page.toString(), limit: '18' }
+    });
   }
 
   searchBooksByGenre(genres: string[]): Observable<any> {
@@ -20,7 +26,9 @@ export class BooksService {
       params: { subject: subjectParam, limit: '300', page: '1' }
     });
   }
-
+  getYearIfNotDateHere(bookid: string){
+    return this.http.get<any>(`https://openlibrary.org/search.json?q=${bookid}`)
+  }
 
   getBookDetails(bookId: string) {
     return this.http.get<any>(`https://openlibrary.org/works/${bookId}.json`);
@@ -31,8 +39,6 @@ export class BooksService {
   getEditionBook(editionKey: String){
     return this.http.get(`https://openlibrary.org/books/${editionKey}.json`)
   }
-
-
 
 
 

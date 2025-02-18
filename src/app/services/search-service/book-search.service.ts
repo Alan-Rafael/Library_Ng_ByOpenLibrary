@@ -9,11 +9,10 @@ export class BookSearchService {
 
   constructor() { }
 
-  private searchResultsSource = new BehaviorSubject<any[]>([]);
+  private searchResultsSource = new BehaviorSubject<string>('');
   searchResults = this.searchResultsSource.asObservable();
 
-  setSearchBooks(books: Book[]) {
-    this.searchResultsSource.next(books);
-    console.log('searchResultsSource', this.searchResultsSource);
+  setSearchBooks(query: string) {
+    this.searchResultsSource.next(query);
   }
 }
