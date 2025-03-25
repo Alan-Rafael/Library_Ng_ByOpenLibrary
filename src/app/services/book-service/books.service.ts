@@ -40,8 +40,6 @@ export class BooksService {
     return this.http.get(`https://openlibrary.org/books/${editionKey}.json`)
   }
 
-
-
   initialBoooksFiction(page: number =1, limit: number =10): Observable<any[]>{
     return this.http.get<any[]>(`https://openlibrary.org/search.json?q=adventure+fiction`)
   }
