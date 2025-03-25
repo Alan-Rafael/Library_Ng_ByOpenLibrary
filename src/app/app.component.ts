@@ -2,8 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import  {HeaderComponent} from './components/header/header.component';
-import { FiltersBooksComponent } from './components/filters-books/filters-books.component';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +13,8 @@ import { CommonModule } from '@angular/common';
     RouterOutlet,
     FormsModule,
     HeaderComponent,
-    FiltersBooksComponent,
     CommonModule,
-  
+    FooterComponent,
   ],
   
   templateUrl: './app.component.html',

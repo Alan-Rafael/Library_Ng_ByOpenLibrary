@@ -88,6 +88,7 @@ export class BooksComponent implements OnInit{
         }
       });
     }
+    
     viewBookDetails(): void {
       this.route.navigate(['viewBookDetails'])
     }

@@ -37,6 +37,7 @@ app.use(
   }),
 );
 
+
 /**
  * Handle all other requests by rendering the Angular application.
  */
@@ -59,6 +60,7 @@ if (isMainModule(import.meta.url)) {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }
+
 
 /**
  * The request handler used by the Angular CLI (dev-server and during build).

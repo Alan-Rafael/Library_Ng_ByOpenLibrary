@@ -1,21 +1,22 @@
 .body {
-    font-family: "Lucida Grande", Verdana, Geneva, Helvetica, Arial, sans-serif;
-    background-color: #f1f1f1;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #F5F5F5;
     padding: 0;
     border: 0;
     margin: 0;
     overflow-x: hidden;
+}
+.container{
     margin-top: 8rem;
 }
 
-
 .book-container {
-    background-color: #f1f1f1;
+    background-color: #F5F5F5;
     padding: 8px;
-    margin-right: 200px;
 }
 
 .row-title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
     font-weight: bold;
     margin-left: 10px;
@@ -36,7 +37,7 @@
     width: 100%;
     scrollbar-width: none; 
     -ms-overflow-style: none; 
-    background-color: #fffdfd;
+    background-color: #FFFFFF;
 }
 
 .links{
@@ -60,12 +61,14 @@
     display: inline-block;
     flex: 0 0 auto;
     cursor: pointer;
-    width: 170px;
-    height: 250px;
+    width: 160px;
+    height: 260px;
     margin: 4px;
     background-color: #fffdfd;
     text-align: center;
-    overflow: hidden;
+    position: relative;
+    overflow: visible; 
+    transition: transform 0.3s ease-in-out;
 }
 
 .book-card img {
@@ -73,21 +76,19 @@
     height: 200px;
     border-radius: 5px;
     object-fit: cover;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .book-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
-
-
-
 
 .scroll-btn-left,
 .scroll-btn-right {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(25, 133, 161, 0.6);
+    background-color:  #1565C0;
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -104,7 +105,7 @@
 
 .scroll-btn-left:hover,
 .scroll-btn-right:hover {
-    background-color: rgba(25, 133, 161, 0.9); 
+    background-color: #1565C0; 
     transform: translateY(-50%) scale(1.1);
 }
 
@@ -117,7 +118,59 @@
 }
 
 @media (max-width: 768px) {
+    .book-container {
+        margin-right: 0;
+    }
+    .row-title {
+        font-size: 18px;
+    }
     .book-card {
-        width: 150px;
+        width: 130px;
+        height: 200px;
+    }
+    .book-card img {
+        width: 120px;
+        height: 180px;
+    }
+    .scroll-btn-left,
+    .scroll-btn-right {
+        width: 35px;
+        height: 35px;
+    }
+    .titles {
+        font-size: 12px;
+    }
+    .row-wrapper {
+        justify-content: center;
+    }
+    .scroll-btn-left,
+    .scroll-btn-right {
+        display: none;
+    }
+    .book-row {
+        padding: 5px;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-card {
+        width: 120px;
+        height: 180px;
+    }
+    .book-card img {
+        width: 100px;
+        height: 150px;
+    }
+    .scroll-btn-left,
+    .scroll-btn-right {
+        width: 30px;
+        height: 30px;
+    }
+    .titles {
+        font-size: 11px;
+    }
+    .book-container {
+        margin-right: 0;
     }
 }

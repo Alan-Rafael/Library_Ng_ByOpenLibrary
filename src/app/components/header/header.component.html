@@ -1,7 +1,30 @@
 <mat-toolbar class="custom-toolbar">
-    <h1 (click)="navigateHome()" id="my-app">Source Library</h1>
+    <div class="menu-button" (click)="toggleFilter()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+        </svg>
+    </div>
+    
+    <div>
+        <h1 (click)="navigateHome()" id="my-app">Source Library</h1>
+        <hr class="hrs">  
+    </div>
+    
     <div class="pesquisar">
         <input type="text" placeholder="Buscar livros..." #searchInput />
         <button (click)="searchBooks(searchInput.value)">Buscar</button>
     </div>
 </mat-toolbar>
+
+<!-- Dropdown do filtro (div oculta) -->
+<div class="filter-container" *ngIf="showFilter">
+    <form (ngSubmit)="onSubmitByGenres()" class="menu-form">
+        <p>Filtrar livros por gênero</p>
+        <mat-radio-group [(ngModel)]="selectedGenre" name="genre">
+            <mat-radio-button *ngFor="let option of options" [value]="option.value">
+                {{ option.label }}
+            </mat-radio-button>
+        </mat-radio-group>
+        <button mat-button type="submit">Filtrar</button>
+    </form>
+</div>

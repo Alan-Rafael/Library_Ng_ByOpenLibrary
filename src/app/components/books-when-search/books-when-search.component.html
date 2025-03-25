@@ -16,9 +16,13 @@
         <h2 class="row-title">Nenhum resultado encontrado</h2>
     </ng-template>
 
-    <div class="pagination" *ngIf="searchQuery.length > 0">
-        <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
-        <span>Página {{ currentPage }} de {{ totalPages }}</span>
-        <button (click)="nextPage()" [disabled]="currentPage === totalPages">Próxima</button>
+    <div class="pagination">
+        <div class="pagination-buttons">
+            <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+            <button (click)="nextPage()" [disabled]="currentPage === totalPages">Próximo</button>
+        </div>
+        <div class="pagination-info">
+            Página {{currentPage}} de {{totalPages}}
+        </div>
     </div>
 </div>
