@@ -56,7 +56,7 @@ export class HeaderComponent {
     { value: 'Family', label: 'Family', selected: false },
     { value: 'Fiction', label: 'Fiction', selected: false },
     { value: 'Horror', label: 'Horror', selected: false },
-    { value: 'Comic and Graphic Books', label: 'HQs', selected: false },
+    { value: 'Superheroes', label: 'Superheroes', selected: false },
     { value: 'Juvenile literature', label: 'Juvenil', selected: false },
     { value: 'Mystery', label: 'Mystery', selected: false },
     { value: 'Religion', label: 'Religion', selected: false },
@@ -66,7 +66,7 @@ export class HeaderComponent {
 
   relatedGenres: { [key: string]: string[] } = {
     'Romance': ['Romance', 'Love'],
-    'Juvenile literature': ['Superheroes', 'Juvenile literature', 'Comic and Graphic Books', "Children's stories", 'Adventure', 'Children', 'Fantasy', 'Juvenile fiction'],
+    'Juvenile literature': ['Superheroes', 'Comic and Graphic Books',],
     'Adventure': ['Adventure', 'Juvenile literature',],
     'Fantasy': ['Fantasy', 'Adventure'],
     'Juvenile fiction': ['Juvenile fiction'],
@@ -80,7 +80,7 @@ export class HeaderComponent {
     'Suspense': ['Suspense', 'Mystery',],
     'Crimes': ['Crimes', 'Crime & Mystery'],
     'Religion': ['Religion', 'Theology',],
-    'Comic and Graphic Books': ['Comics & graphic novels, superheroes',],
+    'Superheroes': ['superheroes',],
   };
 
 

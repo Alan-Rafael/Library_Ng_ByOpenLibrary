@@ -1,35 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Faz o conteúdo ocupar toda a altura da tela */
 html, body {
     height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Faz com que o conteúdo ocupe o espaço restante */
-.content {
-    min-height: calc(100vh - 100px); /* 100px é a altura do footer, ajuste conforme necessário */
-    padding-bottom: 100px; /* Dá o espaço necessário para o footer */
+.main-content {
+    flex: 1;
 }
 
-body{
-    background-color: #333;
-
-}
-/* Estilo do Footer */
 .footer {
     background-color: #333;
-    color: white;
-    text-align: center;
+    color: #fff;
     padding: 20px;
-    position: relative;
-    bottom: 0;
+    text-align: center;
     width: 100%;
-    margin-top: 20px; /* Pode ser ajustado conforme a necessidade */
+    margin-top: auto;
+}
+
+@media (max-width: 600px) {
+.footer {
+    padding: 15px;
+    font-size: 14px;
+    }
 }

@@ -13,6 +13,14 @@
     padding: 0 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.custom-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
 .custom-toolbar .menu-button {
     color: white;
     padding:0;
@@ -39,7 +47,7 @@
 }
 .hrs {
     border: none;
-    height: 1px;
+    height: 2px;
     background: linear-gradient(to right, transparent, #fff, transparent);
     margin: 0;
     width: 100%;
@@ -152,8 +160,10 @@ mat-radio-button {
 .menu-form button:hover {
     background-color: #303f9f;
 }
+
 /* Responsividade */
 @media (max-width: 768px) {
+
     .custom-toolbar {
         flex-direction: column;
         height: auto;

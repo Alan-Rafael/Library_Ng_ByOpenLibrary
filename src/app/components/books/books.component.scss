@@ -116,40 +116,55 @@
 .scroll-btn-right {
     right: 10px;
 }
-
 @media (max-width: 768px) {
-    .book-container {
-        margin-right: 0;
-    }
     .row-title {
         font-size: 18px;
     }
+
     .book-card {
         width: 130px;
         height: 200px;
     }
+
     .book-card img {
         width: 120px;
         height: 180px;
     }
+
+    .titles {
+        font-size: 13px;
+    }
+
+    .row-wrapper {
+        justify-content: space-between;
+    }
+
     .scroll-btn-left,
     .scroll-btn-right {
         width: 35px;
         height: 35px;
-    }
-    .titles {
-        font-size: 12px;
-    }
-    .row-wrapper {
+        display: flex; 
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #1565C0;
+        border: none;
+        border-radius: 50%;
+        font-size: 18px;
+        cursor: pointer;
+        align-items: center;
         justify-content: center;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10;
     }
-    .scroll-btn-left,
+
+    .scroll-btn-left {
+        left: -10px; 
+    }
+
     .scroll-btn-right {
-        display: none;
-    }
-    .book-row {
-        padding: 5px;
-        gap: 5px;
+        right: -10px; 
     }
 }
 
@@ -158,19 +173,27 @@
         width: 120px;
         height: 180px;
     }
+
     .book-card img {
         width: 100px;
         height: 150px;
     }
+
+    .titles {
+        font-size: 11px;
+    }
+
     .scroll-btn-left,
     .scroll-btn-right {
         width: 30px;
         height: 30px;
     }
-    .titles {
-        font-size: 11px;
+
+    .scroll-btn-left {
+        left: 5px;
     }
-    .book-container {
-        margin-right: 0;
+
+    .scroll-btn-right {
+        right: 5px;
     }
 }
