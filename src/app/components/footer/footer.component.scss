@@ -1,17 +1,11 @@
-/* Estilo básico do footer */
 .footer {
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
-    display: block;
-    unicode-bidi: isolate;
-    bottom: 0;
     width: 100%;
-    margin: 0;
 }
 
-/* Estilo do conteúdo dentro do footer */
 .footer-content {
     display: flex;
     flex-direction: column;
@@ -19,11 +13,9 @@
     gap: 10px;
 }
 
-/* Estilo para os links de redes sociais */
 .social-links {
     display: flex;
     gap: 15px;
-    font-size: 50px;
 }
 
 .social-icon {
@@ -34,10 +26,9 @@
 }
 
 .social-icon:hover {
-    color: #4caf50; /* Cor ao passar o mouse */
+    color: #4caf50; 
 }
 
-/* Responsividade */
 @media (max-width: 600px) {
     .social-links {
         gap: 24px;

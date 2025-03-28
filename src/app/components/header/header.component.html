@@ -1,6 +1,5 @@
 <mat-toolbar class="custom-toolbar">
     <div>
-
         <div class="custom-menu">
             <div class="menu-button" (click)="toggleFilter()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="28" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
@@ -11,15 +10,12 @@
         </div>
         <hr class="hrs">  
     </div>
-
-    
     <div class="pesquisar">
         <input type="text" placeholder="Buscar livros..." #searchInput />
         <button (click)="searchBooks(searchInput.value)">Buscar</button>
     </div>
 </mat-toolbar>
 
-<!-- Dropdown do filtro (div oculta) -->
 <div class="filter-container" *ngIf="showFilter">
     <form (ngSubmit)="onSubmitByGenres()" class="menu-form">
         <p>Filtrar livros por gênero</p>

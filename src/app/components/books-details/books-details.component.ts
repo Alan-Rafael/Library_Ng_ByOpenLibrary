@@ -81,7 +81,7 @@ export class BooksDetailsComponent implements OnInit {
 
   getAuthors(): { name: string; url?: string }[] {
     return this.selectedBook?.authors?.map((authorObj: any) => ({
-      name: authorObj.name || "Autor desconhecido", // Verifica se já tem o nome preenchido
+      name: authorObj.name || "Autor desconhecido", 
       url: authorObj.author?.key ? `https://openlibrary.org${authorObj.author.key}` : undefined,
     })) || [];
   }
